@@ -34,6 +34,17 @@ public class Main {
         System.out.println("Contains even: " + containsEven);
     }
 
+    public static void reverseWords(String str) {
+        StringBuilder result = new StringBuilder();
+        String[] words = str.split(" ");
+
+        for (String word : words) {
+            result.append((new StringBuilder(word)).reverse() + " ");
+        }
+
+        System.out.println(result.toString());
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] arr = new int[5];
@@ -46,5 +57,10 @@ public class Main {
 
         System.out.println("Original: " + Arrays.toString(arr));
         arraySummary(arr);
+
+        System.out.println("Enter a sentence: ");
+        reverseWords(scanner.nextLine());
+
+        scanner.close();
     }
 }
